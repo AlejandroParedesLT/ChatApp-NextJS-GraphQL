@@ -110,7 +110,7 @@ async function main() {
                 //console.log('Sesion Backend principal: ',req.headers, req.body, req.params, req.query);
                 const session = await getSession({req});
                 //console.log('Sesion Backend principal: ',session);
-                return {session : session as Session, prisma, pubsub};
+                return {session : session as unknown as Session, prisma, pubsub};
             },
         }),
     );
